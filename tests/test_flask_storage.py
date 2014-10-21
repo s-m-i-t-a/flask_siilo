@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 """
-test_flask_storage
+test_flask_siilo
 ----------------------------------
 
-Tests for `flask_storage` module.
+Tests for `flask_siilo` module.
 """
 
 import unittest
 
-from flask_storage import flask_storage
+from flask_siilo import flask_siilo
 
 
 class TestFlask_storage(unittest.TestCase):

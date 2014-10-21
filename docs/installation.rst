@@ -4,9 +4,9 @@ Installation
 
 At the command line::
 
-    $ easy_install flask_storage
+    $ easy_install flask_siilo
 
 Or, if you have virtualenvwrapper installed::
 
-    $ mkvirtualenv flask_storage
-    $ pip install flask_storage
+    $ mkvirtualenv flask_siilo
+    $ pip install flask_siilo

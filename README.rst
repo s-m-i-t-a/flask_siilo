@@ -2,17 +2,17 @@
 Flask-Storage
 ===============================
 
-.. image:: https://badge.fury.io/py/flask_storage.png
-    :target: http://badge.fury.io/py/flask_storage
+.. image:: https://badge.fury.io/py/flask_siilo.png
+    :target: http://badge.fury.io/py/flask_siilo
 
-.. image:: https://travis-ci.org/s-m-i-t-a/flask_storage.png?branch=master
-        :target: https://travis-ci.org/s-m-i-t-a/flask_storage
+.. image:: https://travis-ci.org/s-m-i-t-a/flask_siilo.png?branch=master
+        :target: https://travis-ci.org/s-m-i-t-a/flask_siilo
 
-.. image:: https://pypip.in/d/flask_storage/badge.png
-        :target: https://pypi.python.org/pypi/flask_storage
+.. image:: https://pypip.in/d/flask_siilo/badge.png
+        :target: https://pypi.python.org/pypi/flask_siilo
 
-.. image:: https://coveralls.io/repos/s-m-i-t-a/flask_storage/badge.png
-        :target: https://coveralls.io/r/s-m-i-t-a/flask_storage
+.. image:: https://coveralls.io/repos/s-m-i-t-a/flask_siilo/badge.png
+        :target: https://coveralls.io/r/s-m-i-t-a/flask_siilo
 
 
 A simple storage for Flask.
@@ -21,14 +21,14 @@ A simple storage for Flask.
 
 Quickstart
 ----------
-Install flask_storage::
+Install flask_siilo::
 
-    pip install flask_storage
+    pip install flask_siilo
 
 In the app you must init the ``Storage``::
 
     from flask import Flask
-    from flask.ext.storage import Storage
+    from flask.ext.siilo import Storage
 
     app = Flask(__name__)
     Storage(app)

@@ -32,7 +32,7 @@ clean-test:
 	rm -fr htmlcov/
 
 lint:
-	flake8 flask_storage tests
+	flake8 flask_siilo tests
 
 test:
 	py.test
@@ -41,15 +41,15 @@ test-all:
 	tox
 
 coverage:
-	coverage run --source flask_storage runtests.py
+	coverage run --source flask_siilo runtests.py
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
 
 docs:
-	rm -f docs/flask_storage.rst
+	rm -f docs/flask_siilo.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ flask_storage
+	sphinx-apidoc -o docs/ flask_siilo
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	open docs/_build/html/index.html

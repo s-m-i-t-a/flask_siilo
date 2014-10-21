@@ -13,7 +13,7 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
-module_path = os.path.join(os.path.dirname(__file__), 'flask_storage', '__init__.py')
+module_path = os.path.join(os.path.dirname(__file__), 'flask_siilo', '__init__.py')
 version_line = [line for line in open(module_path)
                 if line.startswith('__version__')][0]
 __version__ = eval(version_line.split('__version__ = ')[-1])
@@ -44,23 +44,23 @@ test_requirements = [
 ]
 
 setup(
-    name='flask_storage',
+    name='flask_siilo',
     version=__version__,
-    description='A simple storage for Flask.',
+    description='A simple storage for Flask based on siilo.',
     long_description=readme + '\n\n' + history,
     author='Jindřich Smitka',
     author_email='smitka.j@gmail.com',
-    url='https://github.com/s-m-i-t-a/flask_storage',
+    url='https://github.com/s-m-i-t-a/flask-siilo',
     packages=[
-        'flask_storage',
+        'flask_siilo',
     ],
-    package_dir={'flask_storage':
-                 'flask_storage'},
+    package_dir={'flask_siilo':
+                 'flask_siilo'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
     zip_safe=False,
-    keywords='flask_storage',
+    keywords='flask_siilo',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',

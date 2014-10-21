@@ -12,6 +12,6 @@ python:
 install: pip install -r requirements-dev.txt
 
 # command to run tests, e.g. python setup.py test
-script: coverage run --source flask_storage runtests.py
+script: coverage run --source flask_siilo runtests.py
 
 after_success: coveralls
