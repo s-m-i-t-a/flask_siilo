@@ -1,0 +1,16 @@
+-r requirements.txt
+
+coverage
+pep8
+pylint
+flake8
+pyflakes
+mccabe
+pytest
+pytest-cov
+tox
+coveralls
+mock
+
+# docs
+Sphinx
