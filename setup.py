@@ -13,7 +13,7 @@ if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     sys.exit()
 
-module_path = os.path.join(os.path.dirname(__file__), 'flask_siilo', '__init__.py')
+module_path = os.path.join(os.path.dirname(__file__), 'flask_siilo.py')
 version_line = [line for line in open(module_path)
                 if line.startswith('__version__')][0]
 __version__ = eval(version_line.split('__version__ = ')[-1])
@@ -54,8 +54,6 @@ setup(
     packages=[
         'flask_siilo',
     ],
-    package_dir={'flask_siilo':
-                 'flask_siilo'},
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
