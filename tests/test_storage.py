@@ -29,3 +29,11 @@ class TestImportFromString(object):
 
         from siilo.storages.filesystem import FileSystemStorage
         assert cls == FileSystemStorage
+
+    def test_raise_import_error_when_string_is_not_dotted_path(self):
+        with pytest.raises(ImportError):
+            import_string('hokus pokus')
+
+    def test_raise_import_error_when_class_or_attribute_not_found(self):
+        with pytest.raises(ImportError):
+            import_string('siilo.storages.filesystem.FooBarBaz')

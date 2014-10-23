@@ -4,6 +4,9 @@ __author__ = 'Jindřich Smitka'
 __email__ = 'smitka.j@gmail.com'
 __version__ = '0.1.0'
 
+import six
+import sys
+
 from importlib import import_module
 
 from flask import current_app
@@ -15,11 +18,18 @@ except ImportError:
 
 
 def import_string(dotted_path):
-    module_path, cls_name = dotted_path.rsplit('.', 1)
+    try:
+        module_path, cls_name = dotted_path.rsplit('.', 1)
+    except ValueError:
+        six.reraise(ImportError, ImportError("Doesn't look like a module path"), sys.exc_info()[2])
 
     module = import_module(module_path)
 
-    return getattr(module, cls_name)
+    try:
+        return getattr(module, cls_name)
+    except AttributeError:
+        msg = 'Module does not define a "%s"' % cls_name
+        six.reraise(ImportError, ImportError(msg), sys.exc_info()[2])
 
 
 class Storage(object):
