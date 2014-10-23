@@ -22,7 +22,7 @@ readme = open('README.rst').read()
 history = open('HISTORY.rst').read().replace('.. :changelog:', '')
 
 requirements = [
-    'wheel==0.23.0',
+    'wheel==0.24.0',
     'Flask>=0.10.1',
     'six>=1.7.3',
     'apache-libcloud==0.15.1',
