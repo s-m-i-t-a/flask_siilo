@@ -35,9 +35,10 @@ def import_string(dotted_path):
 class Storage(object):
     def __init__(self, app=None, name='default'):
         self.app = app
+        self.name = name
+        self.ctx_storage_name = '%s_storage' % name
         self.storage_class_name = '%s_STORAGE_CLASS' % name.upper()
         self.storage_settings_name = '%s_STORAGE_SETTINGS' % name.upper()
-        self.name = name
         if app is not None:
             self.init_app(app)
 
@@ -49,8 +50,8 @@ class Storage(object):
     def storage(self):
         ctx = stack.top
         if ctx is not None:
-            if not hasattr(ctx, 'storage'):
+            if not hasattr(ctx, self.ctx_storage_name):
                 storage_class = import_string(current_app.config[self.storage_class_name])
-                ctx.storage = storage_class(**current_app.config[self.storage_settings_name])
+                setattr(ctx, self.ctx_storage_name, storage_class(**current_app.config[self.storage_settings_name]))
 
-            return ctx.storage
+            return getattr(ctx, self.ctx_storage_name)
