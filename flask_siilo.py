@@ -37,7 +37,7 @@ class Storage(object):
         self.app = app
         self.storage_class_name = '%s_STORAGE_CLASS' % name.upper()
         self.storage_settings_name = '%s_STORAGE_SETTINGS' % name.upper()
-        self.name  = name
+        self.name = name
         if app is not None:
             self.init_app(app)
 
