@@ -50,10 +50,8 @@ setup(
     long_description=readme + '\n\n' + history,
     author='Jindřich Smitka',
     author_email='smitka.j@gmail.com',
-    url='https://github.com/s-m-i-t-a/flask-siilo',
-    packages=[
-        'flask_siilo',
-    ],
+    url='https://github.com/s-m-i-t-a/flask_siilo',
+    py_modules=['flask_siilo'],
     include_package_data=True,
     install_requires=requirements,
     license="BSD",
