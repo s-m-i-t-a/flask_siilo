@@ -33,15 +33,24 @@ def import_string(dotted_path):
 
 
 class Storage(object):
-    def __init__(self, app=None):
+    def __init__(self, app=None, name='default'):
         self.app = app
+        self.storage_class_name = '%s_STORAGE_CLASS' % name.upper()
+        self.storage_settings_name = '%s_STORAGE_SETTINGS' % name.upper()
+        self.name  = name
         if app is not None:
             self.init_app(app)
 
     def init_app(self, app):
-        app.config.setdefault('SIILO_STORAGE_CLASS',
+        app.config.setdefault(self.storage_class_name,
                               'siilo.storages.filesystem.FileSystemStorage')
 
     @property
     def storage(self):
-        pass
+        ctx = stack.top
+        if ctx is not None:
+            if not hasattr(ctx, 'storage'):
+                storage_class = import_string(current_app.config[self.storage_class_name])
+                ctx.storage = storage_class(**current_app.config[self.storage_settings_name])
+
+            return ctx.storage

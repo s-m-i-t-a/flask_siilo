@@ -16,11 +16,20 @@ from flask_siilo import Storage, import_string
 
 class TestStorage(object):
     def test_return_local_file_storage_as_default_storage(self):
+        settings = {
+            'base_directory': '/tmp',
+        }
         app = Flask(__name__)
-        storage = Storage(app)
+        app.config.setdefault('DEFAULT_STORAGE_SETTINGS', settings)
+        s = Storage(app)
+
+        ctx = app.app_context()
+        ctx.push()
+        storage = s.storage
+        ctx.pop()
 
         from siilo.storages.filesystem import FileSystemStorage
-        assert isinstance(storage.storage, FileSystemStorage)
+        assert isinstance(storage, FileSystemStorage)
 
 
 class TestImportFromString(object):
