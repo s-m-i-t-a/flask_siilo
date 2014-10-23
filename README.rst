@@ -14,6 +14,10 @@ Flask-Storage
 .. image:: https://coveralls.io/repos/s-m-i-t-a/flask_siilo/badge.png
         :target: https://coveralls.io/r/s-m-i-t-a/flask_siilo
 
+.. image:: https://requires.io/github/s-m-i-t-a/flask_siilo/requirements.svg?branch=master
+        :target: https://requires.io/github/s-m-i-t-a/flask_siilo/requirements/?branch=master
+        :alt: Requirements Status
+
 
 A simple storage for Flask.
 
