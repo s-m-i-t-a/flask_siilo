@@ -12,6 +12,6 @@ python:
 install: pip install -r requirements-dev.txt
 
 # command to run tests, e.g. python setup.py test
-script: python runtests.py --cov
+script: py.test --cov
 
 after_success: coveralls
