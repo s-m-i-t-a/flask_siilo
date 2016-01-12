@@ -3,6 +3,7 @@
 language: python
 
 python:
+  - "3.5"
   - "3.4"
   - "3.3"
   - "2.7"
@@ -11,6 +12,6 @@ python:
 install: pip install -r requirements-dev.txt
 
 # command to run tests, e.g. python setup.py test
-script: coverage run --source flask_siilo runtests.py
+script: py.test --cov
 
 after_success: coveralls

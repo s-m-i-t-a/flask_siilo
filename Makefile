@@ -38,10 +38,10 @@ test:
 	py.test
 
 test-all:
-	tox
+	tox --skip-missing-interpreters
 
 coverage:
-	coverage run --source flask_siilo runtests.py
+	py.test --cov
 	coverage report -m
 	coverage html
 	open htmlcov/index.html
