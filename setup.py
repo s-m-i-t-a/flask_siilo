@@ -25,7 +25,7 @@ requirements = [
     'wheel==0.24.0',
     'Flask>=0.10.1',
     'six>=1.7.3',
-    'apache-libcloud==0.15.1',
+    'apache-libcloud',
     'siilo==0.1.0',
 ]
 
